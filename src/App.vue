@@ -1,6 +1,111 @@
 <script setup>
 import { ref, reactive, computed } from "vue";  
 const booleano = ref(true);
+const produtos = reactive([
+  {
+    id: 1,
+    titulo: 'Chain of Iron: Volume 2',
+    resenha: 'Cassandra Clare',
+    preco: 23.24,
+    capa: 'https://cdn.kobo.com/book-images/6db37b19-2d7d-4e5b-a1d8-b006188c9db4/1200/1200/False/the-last-hours-chain-of-iron.jpg',
+  },
+  {
+    id: 2,
+    titulo: 'Chain of Thorns',
+    resenha: 'Cassandra Clare',
+    preco: 23.24,
+    capa: 'https://cdn.kobo.com/book-images/4aa958d8-c1ed-4bf2-90ce-fef019f92a15/353/569/90/False/the-last-hours-chain-of-thorns.jpg',
+  },
+  {
+    id: 3,
+    titulo: 'City of Fallen Angels',
+    resenha: 'Cassandra Clare',
+    preco: 13.94,
+    capa: 'https://m.media-amazon.com/images/I/815MzJpG6iL._AC_UF1000,1000_QL80_.jpg',
+  },
+  {
+    id: 4,
+    titulo: 'Nona the Ninth',
+    resenha: 'Cassandra Clare',
+    preco: 16.84,
+    capa: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSjYxA73VNaIFSItXwUsuMHkRQo7f8PXGBg&s',
+  },
+  {
+    id: 5,
+    titulo: 'Harlem Shuffle',
+    resenha: 'Colson Whitehead',
+    preco: 26.92,
+    capa: 'https://m.media-amazon.com/images/I/81ZPFCh0xML.jpg',
+  },
+  {
+    id: 6,
+    titulo: 'Two Old Women',
+    resenha: 'Velma Wallis',
+    preco: 13.95,
+    capa: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBXEMa4hM454G7Whh7PrDN8R_oYebpPdFl_Q&s',
+  },
+  {
+    id: 7,
+    titulo: 'Carrie Soto Is Back',
+    resenha: 'Taylor Jenkins Reid',
+    preco: 26.04,
+    capa: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGJROWBwFV4AHVxK1H0NNVTiEBBlVbmnf2gg&s',
+  },
+  {
+    id: 8,
+    titulo: 'Book Lovers',
+    resenha: 'Emily Henry',
+    preco: 15.81,
+    capa: 'https://m.media-amazon.com/images/I/71Xy4AL7jKL.jpg',
+  }
+]);
+
+const carrinho = reactive({
+  items: [
+  ]
+});
+
+function remover(a, id) {
+  let posicaoItem = a.findIndex(objeto => objeto.id == id)
+  a.splice(posicaoItem, 1)
+}
+
+function decrementar(item) {
+  if (item.quantidade > 1) {
+    item.quantidade--
+  } else {
+    remover(carrinho.items, item.id)
+  }
+}
+
+function incrementar(item) {
+  if (item.quantidade < 100) {
+    item.quantidade++
+  } else {
+    item.quantidade == 1;
+  }
+}
+
+function adicionar(item) {
+  carrinho.items.push({ ...item, quantidade: 1 })
+}
+
+function totalCarrinho() {
+  let total = 0;
+  for (let item of carrinho.items) {
+    total += item.preco * item.quantidade;
+  }
+  return total.toFixed(2).replace(".", ",");
+}
+
+function arredondar(item) {
+  if (item.quantidade > 100) {
+    item.quantidade = 100;
+  }
+  if ( item.quantidade < 0) {
+    item.quantidade = 1
+  }
+}
 </script>
 
 <template>
