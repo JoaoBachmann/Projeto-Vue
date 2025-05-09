@@ -195,5 +195,443 @@ const booleano = ref(true);
 </template>
 
 <style scoped>
+/*                   GERAL                      */
+li {
+  list-style-type: none;
+}
 
+* {
+  font-family: 'SuaFonte', sans-serif;
+}
+
+i,
+.fa {
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', 'FontAwesome', sans-serif !important;
+}
+
+/*                     HEADER                   */
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #27AE60;
+
+}
+
+/*tituluzinho*/
+div.titulo {
+  display: flex;
+  margin: 1vw 3vw 4px 0;
+
+}
+
+div.titulo p.um {
+  margin: 1vw 1vw 0 0;
+  font-size: 1.5rem;
+}
+
+div.titulo p.dois {
+  word-break: normal;
+  border-left: 2px solid;
+  padding-left: 1vw;
+  color: #27AE60;
+}
+
+/*barra de pesquisa*/
+.barra-pesquisa {
+  position: relative;
+  width: 300px;
+  display: flex;
+}
+
+.barra-pesquisa input {
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+  /* espaço para o ícone */
+  font-size: 16px;
+  border: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin: 1.5vw 0 1vw 0;
+  background-color: #F1F1F1;
+  outline: none;
+}
+
+.icone-pesquisa {
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', 'FontAwesome', sans-serif !important;
+  margin: 1.5vw 1px 1vw 0;
+  border: none;
+}
+
+/*paginazinhas*/
+div ul.page {
+  display: flex;
+  margin-left: 1vw;
+}
+
+div ul.page li {
+  margin: 1vw 2vw 0 3vw;
+  color: #7B7881;
+}
+
+/*iconezinhos*/
+div ul.icon {
+  display: flex;
+  justify-content: space-between;
+  color: #27AE60;
+}
+
+div ul.icon li {
+  margin: 1vw 1vw 0 1vw;
+}
+
+div ul.icon li.icone {
+  border-right: 1px solid;
+  border-left: 1px solid;
+  padding: 0 1vw 0 1vw;
+}
+
+/* SECTION LIVROSSSSSSSSSSSSSSSSSSSSSSSS*/
+section.listalivros {
+  margin: 5vw;
+}
+
+section.listalivros h1 {
+  font-size: 2rem;
+  color: #231F2D;
+}
+
+
+section.listalivros .livro {
+  display: inline-block;
+  width: 20%;
+  margin: 1.5vw 1.5vw;
+}
+
+section.listalivros .livro img {
+  border-radius: 5px;
+}
+
+section.listalivros .livro h2 {
+  font-size: 1.7rem;
+  color: #231F2D;
+}
+
+section.listalivros .livro p.res {
+  color: #7B7881;
+}
+
+
+section.listalivros .livro .compra {
+  background-color: #27AE60;
+  width: 100%;
+  height: 40px;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  margin-top: 1vw;
+}
+
+/* SECTION CARRINHOSSSSSSSSSSSSSSSSSSS*/
+section.carrinho h1 {
+  color: #27AE60;
+  font-size: 3.5rem;
+  margin: 3vw 0 0 7vw;
+}
+
+section.carrinho div.titulos {
+  display: flex;
+  justify-content: space-between;
+  margin: 6vw 8vw 0 8vw;
+  border-bottom: 2px solid #27AE60;
+
+}
+
+.itensCarrinhos {
+  display: flex;
+  justify-content: space-between;
+  margin: 4vw 8vw 4vw 8vw;
+  border-bottom: 1px solid grey;
+}
+
+section.carrinho .maior {
+  max-width: 30%;
+  display: flex;
+  margin-bottom: 3vw;
+}
+
+section.carrinho .maior div {
+  margin: 2vw;
+}
+
+.imgCarrinho {
+  width: 8vw;
+  height: 12vw;
+  border-radius: 4px;
+}
+
+section.carrinho .maior div h2 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+section.carrinho .maior div p {
+  color: gray;
+}
+
+section.carrinho .maior div strong {
+  font-size: 2rem;
+  margin-top: 2px;
+}
+
+.carrinho div.contador {
+  border: 1px solid;
+  margin: 1vw 18vw 0 0;
+  padding: 1vw 2vw;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  max-height: 1.5vw;
+}
+
+.carrinho div.contador input {
+  border: none;
+  background-color: white;
+  font-size: 1.4rem;
+  width: 2vw;
+  text-align: center;
+}
+
+.carrinho .contador input::-webkit-inner-spin-button,
+.input-quantidade::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.carrinho strong.preco {
+  font-size: 2rem;
+  margin: 3vw 0 0 0;
+}
+
+.carrinho div.contador button {
+  border: none;
+  background-color: white;
+  font-size: 1.4rem;
+}
+
+.carrinho strong.preco {
+  font-size: 2rem;
+  margin: 3vw 0 0 0;
+}
+
+.carrinho button.butao {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 1vw 2.5vw;
+  font-size: 1.2rem;
+  margin-left: 9vw;
+  margin-top: 2vw;
+}
+
+.carrinho ul.principal {
+  display: flex;
+  justify-content: space-between;
+  margin: 3vw 0 10vw 0;
+}
+
+.carrinho ul li.cupom {
+  margin: 2vw 0 0 6.8vw;
+}
+
+.carrinho ul li.cupom input {
+  padding: 1vw 3vw;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.carrinho ul li.cupom button {
+  background-color: #27AE60;
+  border: none;
+  padding: 1vw 3vw;
+  border-radius: 4px;
+  margin-left: 2vw;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.carrinho ul li.totalC {
+  border: 1px solid;
+  border-radius: 4px;
+  margin: 2vw 8vw 0 0;
+  padding: 1vw 1vw 0 1vw;
+  font-size: 1.1rem;
+  padding: 0vw 2vw;
+}
+
+.carrinho div.maiorFinal div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vw;
+
+}
+
+.carrinho ul li.totalC button {
+  background-color: #27AE60;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  padding: 1vw 3vw;
+  margin: 2vw;
+  border-radius: 4px;
+}
+
+.carrinho .border {
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+}
+
+/*SECTION AUTOR*/
+
+.autorL {
+  display: flex;
+  align-items: center;
+  padding: 0 10vw;
+}
+
+.texto {
+  font-size: 1.1vw;
+}
+
+.sobreA {
+  color: grey;
+  font-size: 1.01vw;
+  padding: 0 15vw 0 0;
+}
+
+.sobreA .autor {
+  background-color: white;
+  color: #27ae60;
+  border: 1px solid;
+  width: 20%;
+  padding: 0.5vw;
+}
+
+.sobreA .negrito {
+  color: black;
+  font-size: 3vw;
+}
+
+.sobreA button {
+  font-size: 1.1vw;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 4px;
+
+}
+
+/*DIV FOTO LIVRO*/
+
+.fotoLivro p {
+  padding: 0 0 0 15vw;
+
+}
+
+/*Section OPCOES*/
+.opcoes {
+  padding: 3vw 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #27ae60;
+  border-bottom: 2px solid #27ae60;
+}
+
+.opcoes div {
+  padding: 0 10vw 0;
+  display: flex;
+  align-items: center;
+  /* Alinha verticalmente */
+  gap: 1vw;
+  /* Espaço entre o ícone e o texto */
+  font-size: 1.2vw;
+  font-weight: bolder;
+}
+
+.linha {
+  border-right: 1px solid grey;
+}
+
+/*FOOTER*/
+footer {
+  background-color: #27ae60;
+}
+
+.pe {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pe {
+  padding: 1.5vw 5vw;
+  border-bottom: 1px solid white;
+}
+
+/*lado esquerdo*/
+.pe .unha {
+  color: white;
+  font-size: 1.2vw;
+}
+
+.pe .unha i {
+  padding: 0 7px 0 0;
+}
+
+/*lado direito*/
+.ifbook p {
+  color: white;
+  font-size: 1.1vw;
+}
+
+.ifbook i {
+  color: white;
+  font-size: 1.1vw;
+}
+
+.ifbook .redes {
+  display: flex;
+  align-items: center;
+  /* Alinha verticalmente */
+}
+
+.redes i {
+  padding: 0 10px 0 0;
+}
+
+/*cartoes*/
+.img {
+  padding: 2vw 0;
+}
+
+.img img {
+  padding: 0 0.5vw;
+}
+
+/*theLast*/
+
+
+.theLast {
+  color: #FFFFFF;
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: center;
+  padding: 2vw;
+}
 </style>
